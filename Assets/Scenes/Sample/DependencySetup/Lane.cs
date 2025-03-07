@@ -9,13 +9,11 @@ public class Lane : MonoBehaviour
 
     private int spawnIndex = 0;
 
-    // Adds a single note timestamp to this lane.
     public void AddTimestamp(double timestamp)
     {
         timeStamps.Add(timestamp);
     }
     
-    // Clears any existing timestamps and resets the spawn index.
     public void ClearTimestamps()
     {
         timeStamps.Clear();
@@ -24,7 +22,6 @@ public class Lane : MonoBehaviour
 
     void Update()
     {
-        // Spawn a note when the elapsed song time reaches (timestamp - noteTime).
         if (spawnIndex < timeStamps.Count)
         {
             if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.Instance.noteTime)

@@ -4,13 +4,11 @@ using System;
 public class Note : MonoBehaviour
 {
     double timeInstantiated;
-    public float assignedTime; // (Optional) Time when the note should be hit
+    public float assignedTime;
 
     void Start()
     {
-        // Record the time when this note was spawned
         timeInstantiated = SongManager.GetAudioSourceTime();
-        // Set the initial position using SongManager settings (e.g., the right spawn position)
         transform.localPosition = new Vector3(SongManager.Instance.noteSpawnX, 0f, 0f);
     }
 void Update()

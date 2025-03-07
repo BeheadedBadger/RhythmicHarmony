@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class HitZone : MonoBehaviour
 {
-    public KeyCode input; // The key to register a hit (set this in the Inspector)
+    public KeyCode input;
     private List<Note> notesInZone = new List<Note>();
 
     void OnTriggerEnter2D(Collider2D other)
