@@ -15,7 +15,6 @@ public class NoteSpawner : MonoBehaviour
     void Start()
     {
         spawnTime = DateTime.Now.AddSeconds(spawnDelaySeconds);
-        spawnTime.AddSeconds(spawnDelaySeconds);
         instantiatedNotes = new();
     }
 
