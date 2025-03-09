@@ -1,33 +1,32 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// [ExecuteInEditMode]
 public class BeatMapManager : MonoBehaviour
 {
-    [Serializable]
-    struct Beat {
-        [Min(0)]
-        public float TimeToHit;
-    }
+    
 
     [Header("Top Row")]
-    [SerializeField] private List<Beat> topRowBeats;
-    public List<Sprite> TopSprites;
-    public float TopRowSpawnY;
+    [SerializeField] private BeatRow_SO topRowBeats;
+    
+    public float TopRowYOffset;
     private List<GameObject> topRowBeatObjs;
 
     [Header("Bot Row")]
-    [SerializeField] private List<Beat> botRowBeats;
-    public List<Sprite> BotSprites;
-    public float BotRowSpawnY;
+    [SerializeField] private BeatRow_SO botRowBeats;
     private List<GameObject> botRowBeatObjs;
     
-    
+    [Header("Sprites")]
+    public List<Sprite> UpSprites;
+    public List<Sprite> RightSprites;
+    public List<Sprite> LeftSprites;
+    public List<Sprite> DownSprites;
+
     [Header("Settings")]
-    public Vector3 SpawnPos;
+    public Transform SpawnTransform;
     [Tooltip("When the beat should be pressed for a perfect score")]
-    public Vector3 FinalPos;
+    public Transform FinalTransform;
     
     [Tooltip("Where the beat will despawn X units after finalPos")]
     public float DespawnOffset;
@@ -40,8 +39,11 @@ public class BeatMapManager : MonoBehaviour
     [SerializeField][Min(0f)] private float globalDelay = 0f;
     public GameObject baseBeatObj;
     private AudioSource audioSource;
+    private Vector3 spawnPos;
+    private Vector3 finalPos;
 
     [Header("Debug Toggles")]
+    [Tooltip("Only works if script is in ExecuteInEditMode")]
     public bool DoOrganizeBeatMap = false;
 
     private void Awake() {
@@ -49,23 +51,27 @@ public class BeatMapManager : MonoBehaviour
     }
 
     private void Start() {
+        spawnPos = SpawnTransform.position;
+        finalPos = FinalTransform.position;
+
+        // OrganizeBeatMap();
+
+        
         // Initialize BeatObjs
-        OrganizeBeatMap();
         topRowBeatObjs = new();
         botRowBeatObjs = new();
-        foreach (var item in topRowBeats)
+        foreach (var item in topRowBeats.Beats)
         {
             topRowBeatObjs.Add(Instantiate(baseBeatObj, transform.GetChild(0))); 
             topRowBeatObjs[^1].SetActive(false);
-            
         }
-        foreach (var item in botRowBeats)
+        foreach (var item in botRowBeats.Beats)
         {
             botRowBeatObjs.Add(Instantiate(baseBeatObj, transform.GetChild(1))); 
             botRowBeatObjs[^1].SetActive(false);
         }
 
-        trackDisance = FinalPos.x - SpawnPos.x;
+        trackDisance = finalPos.x - spawnPos.x;
         beatSpeed = trackDisance / SpawnTimeOffset;
         StartCoroutine(SpawnBeatMap());
     }
@@ -80,32 +86,49 @@ public class BeatMapManager : MonoBehaviour
     private IEnumerator SpawnBeatMap() {
         yield return new WaitForSeconds(globalDelay);
         audioSource.Play();
+        StartCoroutine(SpawnRow(topRowBeats, true));
+        StartCoroutine(SpawnRow(botRowBeats, false));
     }
 
-    private IEnumerator SpawnRow(List<Beat> beats) {
+    private IEnumerator SpawnRow(BeatRow_SO row, bool isTop) {
+        Sprite GetSprite(BeatRow_SO.Beat.Direction dir) {
+            return dir switch
+            {
+                (BeatRow_SO.Beat.Direction.Up) => UpSprites[Random.Range(0, UpSprites.Count)],
+                (BeatRow_SO.Beat.Direction.Down) => DownSprites[Random.Range(0, DownSprites.Count)],
+                (BeatRow_SO.Beat.Direction.Right) => UpSprites[Random.Range(0, RightSprites.Count)],
+                (BeatRow_SO.Beat.Direction.Left) => LeftSprites[Random.Range(0, LeftSprites.Count)],
+                _ => UpSprites[Random.Range(0, UpSprites.Count)],
+            };
+        }
+        
         int i = 0;
         float time = 0f;
-        while (i < beats.Count) {
-            if (time >= beats[i].TimeToHit) {
+        while (i < row.Beats.Count) {
+            if (time >= GetBeatTimeToHit(row.Beats[i])) {
+                GameObject g = (isTop) ? topRowBeatObjs[i] : botRowBeatObjs[i];
+                g.GetComponent<SpriteRenderer>().sprite = GetSprite(row.Beats[i].Dir);
+                g.SetActive(true);
+                g.GetComponent<Rigidbody2D>().linearVelocityX = beatSpeed;
                 i++;
-                SpawnBeat();
             }
             time += Time.deltaTime;
             yield return null;
         }
     }
 
-    private void SpawnBeat() {
-        
-    }
-
+    // Help Functions
     private void OrganizeBeatMap() {
-        int CompareBeatTime(Beat a, Beat b) {
-            if (a.TimeToHit < b.TimeToHit) return -1;
-            else if (a.TimeToHit > b.TimeToHit) return 1;
+        int CompareBeatTime(BeatRow_SO.Beat a, BeatRow_SO.Beat b) {
+            if (GetBeatTimeToHit(a) < GetBeatTimeToHit(b)) return -1;
+            else if (GetBeatTimeToHit(a) > GetBeatTimeToHit(b)) return 1;
             else return 0;
         }
-        topRowBeats.Sort(CompareBeatTime);
-        botRowBeats.Sort(CompareBeatTime);
+        topRowBeats.Beats.Sort(CompareBeatTime);
+        botRowBeats.Beats.Sort(CompareBeatTime);
+    }
+
+    private float GetBeatTimeToHit(BeatRow_SO.Beat beat) {
+        return beat.Min * 60 + beat.Sec;
     }
 }

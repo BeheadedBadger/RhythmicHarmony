@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e9afd88f7483b409f5fbbf3215a7bc, type: 3}
+  m_Name: TopRow_Lvl1
+  m_EditorClassIdentifier: 
+  Beats:
+  - Min: 0
+    Sec: 1
+    Dir: 0
+  - Min: 0
+    Sec: 3
+    Dir: 3
+  - Min: 0
+    Sec: 7
+    Dir: 3
+  - Min: 0
+    Sec: 9
+    Dir: 3
+  - Min: 0
+    Sec: 11
+    Dir: 0
+  - Min: 0
+    Sec: 13
+    Dir: 3
+  - Min: 0
+    Sec: 15
+    Dir: 0
+  - Min: 0
+    Sec: 17
+    Dir: 3
+  - Min: 0
+    Sec: 19
+    Dir: 0
+  - Min: 0
+    Sec: 21
+    Dir: 3
+  - Min: 0
+    Sec: 22
+    Dir: 0
