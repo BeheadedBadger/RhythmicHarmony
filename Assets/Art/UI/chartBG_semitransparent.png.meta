@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8ce57e9aea80b874d80a04653f0c5b59
+guid: dc3c3e5a3c003dd49af79b2a15a01d79
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7148487702534471312
-    second: Sky_BG_0
+      213: -671164043179001143
+    second: chartBG_semitransparent_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sky_BG_0
+      name: chartBG_semitransparent_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1600
-        height: 1000
+        width: 3031
+        height: 930
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 09eb0dee0b7843360800000000000000
-      internalID: 7148487702534471312
+      spriteID: 9cafc44dbdb8fa6f0800000000000000
+      internalID: -671164043179001143
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Sky_BG_0: 7148487702534471312
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

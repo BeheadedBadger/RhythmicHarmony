@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9f0c39d5130920649bbb54f5cc1f5c82
+guid: 513fa9774d3d0e24eb0c724c286b3a86
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2262748802388900837
-    second: minion2a_0
+      213: -2897687597959265445
+    second: scoreS_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: minion2a_0
+      name: scoreS_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 212
-        width: 1523
-        height: 1150
+        x: 3
+        y: 8
+        width: 617
+        height: 661
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ebb4561c06e66f10800000000000000
-      internalID: 2262748802388900837
+      spriteID: b5345957b7859c7d0800000000000000
+      internalID: -2897687597959265445
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      minion2a_0: 2262748802388900837
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
