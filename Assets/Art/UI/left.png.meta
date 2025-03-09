@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: ec8c1d19d87b63f4ba49885c6aa3d148
+guid: 6b849123724b9a44dbadeaa9cfa9a0c0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1357491006018480211
-    second: Star_Sprite_0
-  - first:
-      213: 4517462794296351556
-    second: Star_Sprite_1
-  - first:
-      213: 2200946465631733954
-    second: Star_Sprite_2
-  - first:
-      213: 8159967592502341310
-    second: Star_Sprite_3
-  - first:
-      213: -8610845205186738188
-    second: Star_Sprite_4
+      213: -2208510542369132325
+    second: left_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,101 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Star_Sprite_0
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 112
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da71b705f19392de0800000000000000
-      internalID: -1357491006018480211
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Star_Sprite_1
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 103
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 44bd3141a7041be30800000000000000
-      internalID: 4517462794296351556
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Star_Sprite_2
+      name: left_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 10
-        width: 86
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2c881ad36255b8e10800000000000000
-      internalID: 2200946465631733954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Star_Sprite_3
-      rect:
-        serializedVersion: 2
-        x: 95
-        y: 77
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ebe2dc1ca470e3170800000000000000
-      internalID: 8159967592502341310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Star_Sprite_4
-      rect:
-        serializedVersion: 2
-        x: 63
         y: 0
-        width: 10
-        height: 9
+        width: 321
+        height: 299
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4f708f878e1208880800000000000000
-      internalID: -8610845205186738188
+      spriteID: bd0f167ec5bc951e0800000000000000
+      internalID: -2208510542369132325
       vertices: []
       indices: 
       edges: []
@@ -234,12 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Star_Sprite_0: -1357491006018480211
-      Star_Sprite_1: 4517462794296351556
-      Star_Sprite_2: 2200946465631733954
-      Star_Sprite_3: 8159967592502341310
-      Star_Sprite_4: -8610845205186738188
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
