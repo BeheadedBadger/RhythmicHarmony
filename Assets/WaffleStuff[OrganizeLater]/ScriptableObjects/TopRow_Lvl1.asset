@@ -15,34 +15,37 @@ MonoBehaviour:
   Beats:
   - Min: 0
     Sec: 1
-    Dir: 0
+    Dir: 1
   - Min: 0
     Sec: 3
-    Dir: 3
+    Dir: 4
+  - Min: 0
+    Sec: 5
+    Dir: 1
   - Min: 0
     Sec: 7
-    Dir: 3
+    Dir: 4
   - Min: 0
     Sec: 9
-    Dir: 3
+    Dir: 4
   - Min: 0
     Sec: 11
-    Dir: 0
+    Dir: 1
   - Min: 0
     Sec: 13
-    Dir: 3
+    Dir: 4
   - Min: 0
     Sec: 15
-    Dir: 0
+    Dir: 1
   - Min: 0
     Sec: 17
-    Dir: 3
+    Dir: 4
   - Min: 0
     Sec: 19
-    Dir: 0
+    Dir: 1
   - Min: 0
     Sec: 21
-    Dir: 3
+    Dir: 4
   - Min: 0
     Sec: 22
-    Dir: 0
+    Dir: 4

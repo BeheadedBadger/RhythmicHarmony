@@ -12,7 +12,7 @@ public class BeatRow_SO : ScriptableObject
         public int Min;
         [Range(0f, 60f)]
         public int Sec;
-        public enum Direction { Up, Down, Left, Right }
+        public enum Direction { None, Up, Down, Left, Right }
         public Direction Dir;
     }
 

@@ -41,8 +41,9 @@ public class BeatMapManager : MonoBehaviour
 
     [Header("Components")]
     private AudioSource audioSource;
-   
 
+    [Header("Score")]
+    private int totalBeats;
 
     [Header("Debug Toggles")]
     [Tooltip("Only works if script is in ExecuteInEditMode")]
@@ -54,32 +55,34 @@ public class BeatMapManager : MonoBehaviour
     }
 
     private void Start() {
-        spawnPos = SpawnTransform.position;
-        finalPos = FinalTransform.position;
-
-        // OrganizeBeatMap();
-
-        
         // Initialize BeatObjs
         topRowBeatObjs = new();
         botRowBeatObjs = new();
         foreach (var item in topRowBeats.Beats)
         {
-            topRowBeatObjs.Add(Instantiate(baseBeatObj, transform.GetChild(0))); 
+            topRowBeatObjs.Add(Instantiate(baseBeatObj, transform.GetChild(0)));
+            topRowBeatObjs[^1].GetComponent<BeatObj>().direction = item.Dir;
             topRowBeatObjs[^1].SetActive(false);
         }
         foreach (var item in botRowBeats.Beats)
         {
             botRowBeatObjs.Add(Instantiate(baseBeatObj, transform.GetChild(1))); 
+            botRowBeatObjs[^1].GetComponent<BeatObj>().direction = item.Dir;
             botRowBeatObjs[^1].SetActive(false);
         }
 
+        // Initialize values
+        spawnPos = SpawnTransform.position;
+        finalPos = FinalTransform.position;
         trackDisance = finalPos.x - spawnPos.x;
         beatSpeed = trackDisance / SpawnTimeOffset;
+
+        totalBeats = topRowBeats.Beats.Count + botRowBeats.Beats.Count;
         StartCoroutine(SpawnBeatMap());
     }
 
     private void Update() {
+        // Debug
         if (DoOrganizeBeatMap) {
             DoOrganizeBeatMap = false;
             OrganizeBeatMap();
@@ -108,7 +111,7 @@ public class BeatMapManager : MonoBehaviour
         int i = 0;
         float time = 0f;
         while (i < row.Beats.Count) {
-            if (time >= GetBeatTimeToHit(row.Beats[i])) {
+            if (time >= GetBeatTimeToHit(row.Beats[i]) - SpawnTimeOffset) {
                 GameObject g = (isTop) ? topRowBeatObjs[i] : botRowBeatObjs[i];
                 g.GetComponent<SpriteRenderer>().sprite = GetSprite(row.Beats[i].Dir);
                 g.SetActive(true);
@@ -135,5 +138,9 @@ public class BeatMapManager : MonoBehaviour
 
     private float GetBeatTimeToHit(BeatRow_SO.Beat beat) {
         return beat.Min * 60 + beat.Sec;
+    }
+
+    private void ProcessEnd() {
+
     }
 }

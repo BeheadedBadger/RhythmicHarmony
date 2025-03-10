@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
-using Unity.VisualScripting;
-using UnityEditor.MPE;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,12 +13,14 @@ public class PlayerController : MonoBehaviour
     public States BotState {get; private set;} = States.None;
     public float ResetTimer = 0.1f;
 
-    [Header("Pos")]
-    public Vector3 TopPos;
-    public Vector3 MidPos;
-    public Vector3 BotPos;
+    [Header("Colliders")]
+    public Collider2D TopCol;
+    public Collider2D MidCol;
+    public Collider2D BotCol;
 
-     private Animator animator;
+    private Animator animator;
+    [SerializeField] BeatMapManager beatMapManager;
+    [SerializeField] ScoreHandler scoreHandler;
 
     private void Awake() {
         inputActions = new();
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Down.performed += OnDownPerformed;
         inputActions.Player.Right.performed += OnRightPerformed;
         inputActions.Player.Left.performed += OnLeftPerformed;
+
         animator = GetComponentInChildren<Animator>();
     }
 
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
         TopState = States.Up;
         ResetAniamtorTriggers();
         animator.SetTrigger("Up");
+        CheckTopOverlap(BeatRow_SO.Beat.Direction.Up);
         ProcessState();
         StartCoroutine(ResetState(TopState));
     }
@@ -53,6 +56,7 @@ public class PlayerController : MonoBehaviour
         TopState = States.Right;
         ResetAniamtorTriggers();
         animator.SetTrigger("Right");
+        CheckTopOverlap(BeatRow_SO.Beat.Direction.Right);
         ProcessState();
         StartCoroutine(ResetState(TopState));
     }
@@ -62,6 +66,7 @@ public class PlayerController : MonoBehaviour
         BotState = States.Left;
         ResetAniamtorTriggers();
         animator.SetTrigger("Left");
+        CheckBotOverlap(BeatRow_SO.Beat.Direction.Left);
         ProcessState();
         StartCoroutine(ResetState(BotState));
     }
@@ -71,14 +76,21 @@ public class PlayerController : MonoBehaviour
         BotState = States.Down;
         ResetAniamtorTriggers();
         animator.SetTrigger("Down");
+        CheckBotOverlap(BeatRow_SO.Beat.Direction.Down);
         ProcessState();
         StartCoroutine(ResetState(BotState));
     }
 
     private void ProcessState() {
-        if (TopState != States.None && BotState != States.None) transform.position = MidPos;
-        else if (TopState != States.None) transform.position = TopPos;
-        else transform.position = BotPos;
+        if (TopState != States.None && BotState != States.None) {
+            transform.position = new(transform.position.x, MidCol.transform.position.y);
+        }
+        else if (TopState != States.None) {
+            transform.position = new(transform.position.x, TopCol.transform.position.y);
+        }
+        else {
+            transform.position = new(transform.position.x, BotCol.transform.position.y);
+        }
     }
 
     private IEnumerator ResetState(States curState) {
@@ -102,7 +114,31 @@ public class PlayerController : MonoBehaviour
                 BotState = States.None;
                 break;
         }
-        // ProcessState();
+        transform.position = new(transform.position.x, BotCol.transform.position.y);
+    }
+
+    private void CheckTopOverlap(BeatRow_SO.Beat.Direction dir) {
+        List<Collider2D> results = new();
+        TopCol.Overlap(results);
+        foreach (var item in results)
+        {
+            if (item.GetComponent<BeatObj>().direction == dir) {
+                scoreHandler.IncreaseScore();
+            }
+            item.gameObject.SetActive(false);
+        }
+    }
+
+    private void CheckBotOverlap(BeatRow_SO.Beat.Direction dir) {
+        List<Collider2D> results = new();
+        BotCol.Overlap(results);
+        foreach (var item in results)
+        {
+            if (item.GetComponent<BeatObj>().direction == dir) {
+                scoreHandler.IncreaseScore();
+            }
+            item.gameObject.SetActive(false);
+        }
     }
 
     private void ResetAniamtorTriggers() {
