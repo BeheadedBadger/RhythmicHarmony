@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public Collider2D BotCol;
 
     private Animator animator;
+    private AudioSource audioSource;
     [SerializeField] BeatMapManager beatMapManager;
     [SerializeField] ScoreHandler scoreHandler;
 
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Left.performed += OnLeftPerformed;
 
         animator = transform.GetChild(0).GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnEnable() {
@@ -123,6 +125,8 @@ public class PlayerController : MonoBehaviour
         foreach (var item in results)
         {
             if (item.GetComponent<BeatObj>().direction == dir) {
+                audioSource.Stop();
+                audioSource.Play();
                 scoreHandler.IncreaseScore();
             }
             item.gameObject.SetActive(false);
@@ -135,6 +139,8 @@ public class PlayerController : MonoBehaviour
         foreach (var item in results)
         {
             if (item.GetComponent<BeatObj>().direction == dir) {
+                audioSource.Stop();
+                audioSource.Play();
                 scoreHandler.IncreaseScore();
             }
             item.gameObject.SetActive(false);

@@ -78,6 +78,7 @@ public class BeatMapManager : MonoBehaviour
 
         totalBeats = topRowBeats.Beats.Count + botRowBeats.Beats.Count;
         StartCoroutine(SpawnBeatMap());
+        StartCoroutine(ProcessEnd());
     }
 
     private IEnumerator SpawnBeatMap() {
