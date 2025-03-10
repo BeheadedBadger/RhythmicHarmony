@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Right.performed += OnRightPerformed;
         inputActions.Player.Left.performed += OnLeftPerformed;
 
-        animator = GetComponentInChildren<Animator>();
+        animator = transform.GetChild(0).GetComponent<Animator>();
     }
 
     private void OnEnable() {

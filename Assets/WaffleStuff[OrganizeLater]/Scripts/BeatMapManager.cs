@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 // [ExecuteInEditMode]
 public class BeatMapManager : MonoBehaviour
@@ -39,17 +40,13 @@ public class BeatMapManager : MonoBehaviour
     public GameObject baseBeatObj;
     private Vector3 spawnPos;
     private Vector3 finalPos;
+    [SerializeField] private PlayableDirector playableDirector;
 
-    [Header("Components")]
     private AudioSource audioSource;
 
     [Header("Score")]
     private int totalBeats;
-
-
-    [Header("Debug Toggles")]
-    [Tooltip("Only works if script is in ExecuteInEditMode")]
-    public bool DoOrganizeBeatMap = false;
+    [SerializeField]ScoreHandler scoreHandler;
 
     private void Awake() {
         audioSource = GetComponent<AudioSource>();
@@ -81,14 +78,6 @@ public class BeatMapManager : MonoBehaviour
 
         totalBeats = topRowBeats.Beats.Count + botRowBeats.Beats.Count;
         StartCoroutine(SpawnBeatMap());
-    }
-
-    private void Update() {
-        // Debug
-        if (DoOrganizeBeatMap) {
-            DoOrganizeBeatMap = false;
-            OrganizeBeatMap();
-        }
     }
 
     private IEnumerator SpawnBeatMap() {
@@ -142,6 +131,7 @@ public class BeatMapManager : MonoBehaviour
 
     private IEnumerator ProcessEnd() {
         yield return new WaitForSeconds(audioSource.clip.length + globalDelay + finishDelay);
-
+        scoreHandler.ProcessScore();
+        playableDirector.Play();
     }
 }
