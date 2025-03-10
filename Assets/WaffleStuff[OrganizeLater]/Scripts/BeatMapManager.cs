@@ -9,8 +9,6 @@ public class BeatMapManager : MonoBehaviour
 
     [Header("Top Row")]
     [SerializeField] private BeatRow_SO topRowBeats;
-    
-    public float TopRowYOffset;
     private List<GameObject> topRowBeatObjs;
 
     [Header("Bot Row")]
@@ -38,9 +36,13 @@ public class BeatMapManager : MonoBehaviour
     public float SpawnTimeOffset;
     [SerializeField][Min(0f)] private float globalDelay = 0f;
     public GameObject baseBeatObj;
-    private AudioSource audioSource;
     private Vector3 spawnPos;
     private Vector3 finalPos;
+
+    [Header("Components")]
+    private AudioSource audioSource;
+   
+
 
     [Header("Debug Toggles")]
     [Tooltip("Only works if script is in ExecuteInEditMode")]
@@ -48,6 +50,7 @@ public class BeatMapManager : MonoBehaviour
 
     private void Awake() {
         audioSource = GetComponent<AudioSource>();
+        
     }
 
     private void Start() {
