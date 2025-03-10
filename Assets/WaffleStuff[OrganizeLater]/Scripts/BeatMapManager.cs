@@ -35,6 +35,7 @@ public class BeatMapManager : MonoBehaviour
     [Min(0.000000001f)]
     public float SpawnTimeOffset;
     [SerializeField][Min(0f)] private float globalDelay = 0f;
+    [SerializeField][Min(0f)] private float finishDelay = 1f;
     public GameObject baseBeatObj;
     private Vector3 spawnPos;
     private Vector3 finalPos;
@@ -44,6 +45,7 @@ public class BeatMapManager : MonoBehaviour
 
     [Header("Score")]
     private int totalBeats;
+
 
     [Header("Debug Toggles")]
     [Tooltip("Only works if script is in ExecuteInEditMode")]
@@ -121,8 +123,6 @@ public class BeatMapManager : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-        // Some delay to let the last few beats through
-        yield return new WaitForSeconds(3);
     }
 
     // Help Functions
@@ -140,7 +140,8 @@ public class BeatMapManager : MonoBehaviour
         return beat.Min * 60 + beat.Sec;
     }
 
-    private void ProcessEnd() {
+    private IEnumerator ProcessEnd() {
+        yield return new WaitForSeconds(audioSource.clip.length + globalDelay + finishDelay);
 
     }
 }
