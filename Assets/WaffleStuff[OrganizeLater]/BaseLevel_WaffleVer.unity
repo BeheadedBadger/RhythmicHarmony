@@ -2271,6 +2271,7 @@ GameObject:
   - component: {fileID: 1311967601}
   - component: {fileID: 1311967600}
   - component: {fileID: 1311967602}
+  - component: {fileID: 1311967603}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -2342,7 +2343,7 @@ Transform:
   m_GameObject: {fileID: 1311967599}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0.62, z: 0}
+  m_LocalPosition: {x: 5, y: 0.6, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2370,6 +2371,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1311967603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311967599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b3b53d95218a64681f1f1308fd20f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDuration: 3
+  pauseDuration: 5
 --- !u!1 &1346938030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,6 +2739,7 @@ GameObject:
   - component: {fileID: 1476297586}
   - component: {fileID: 1476297587}
   - component: {fileID: 1476297588}
+  - component: {fileID: 1476297589}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2787,6 +2803,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1476297589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476297585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b3b53d95218a64681f1f1308fd20f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDuration: 0
+  pauseDuration: 0
 --- !u!1 &1479156299
 GameObject:
   m_ObjectHideFlags: 0
