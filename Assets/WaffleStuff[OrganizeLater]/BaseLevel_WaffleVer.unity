@@ -2322,8 +2322,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 3528562331461443981, guid: 4f0fb255089e3a74992ffeabe89401da, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 6040045547428698899, guid: c90ea87d812234c449c5c62fd72f7723, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2385,6 +2385,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDuration: 3
   pauseDuration: 5
+  switchSpriteInterval: 4
+  sprites:
+  - {fileID: 21300000, guid: 63eef06200786a54ea3fb55c32bff074, type: 3}
+  - {fileID: 21300000, guid: c9dc83d39219904489e4b261a6a56c75, type: 3}
+  - {fileID: 21300000, guid: 66f825dccda26d5479fd1eee057192ab, type: 3}
+  - {fileID: 21300000, guid: a042435ad8dc18e4da8433f53c27950e, type: 3}
 --- !u!1 &1346938030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,7 +2745,6 @@ GameObject:
   - component: {fileID: 1476297586}
   - component: {fileID: 1476297587}
   - component: {fileID: 1476297588}
-  - component: {fileID: 1476297589}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2803,20 +2808,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1476297589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476297585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b3b53d95218a64681f1f1308fd20f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDuration: 0
-  pauseDuration: 0
 --- !u!1 &1479156299
 GameObject:
   m_ObjectHideFlags: 0

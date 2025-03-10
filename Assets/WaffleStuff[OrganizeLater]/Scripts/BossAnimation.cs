@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Threading;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BossAnimation : MonoBehaviour
@@ -9,7 +9,18 @@ public class BossAnimation : MonoBehaviour
     readonly Vector2 Y_RANGE = new(-2f, 0.6f);
     [SerializeField][Min(0f)] float moveDuration;
     [SerializeField][Min(0f)] float pauseDuration;
+    [SerializeField][Min(0f)] float switchSpriteInterval;
     float endTime;
+    public List<Sprite> sprites;
+    SpriteRenderer spriteRenderer;
+
+    private void Awake() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start() {
+        StartCoroutine(UpdateSprite());   
+    }
 
     private void Update() {
         if (Time.time < endTime) return;
@@ -32,7 +43,17 @@ public class BossAnimation : MonoBehaviour
             default:
             break;
         }
-        
+    }
+
+    private IEnumerator UpdateSprite()
+    {
+        yield return new WaitForSeconds(pauseDuration);
+        float duration = 200f;
+        float startTimer = Time.time;
+        while (Time.time - startTimer <duration) {
+            spriteRenderer.sprite = sprites[UnityEngine.Random.Range(0, sprites.Count)];
+            yield return new WaitForSeconds(switchSpriteInterval);
+        }
     }
 
     private IEnumerator GoUp() {
