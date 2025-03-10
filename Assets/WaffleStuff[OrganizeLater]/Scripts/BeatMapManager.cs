@@ -101,7 +101,7 @@ public class BeatMapManager : MonoBehaviour
                 _ => UpSprites[Random.Range(0, UpSprites.Count)],
             };
         }
-        
+
         int i = 0;
         float time = 0f;
         while (i < row.Beats.Count) {
@@ -115,6 +115,8 @@ public class BeatMapManager : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
+        // Some delay to let the last few beats through
+        yield return new WaitForSeconds(3);
     }
 
     // Help Functions
