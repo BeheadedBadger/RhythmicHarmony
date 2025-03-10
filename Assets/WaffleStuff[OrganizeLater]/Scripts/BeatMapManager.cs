@@ -94,7 +94,7 @@ public class BeatMapManager : MonoBehaviour
             {
                 (BeatRow_SO.Beat.Direction.Up) => UpSprites[Random.Range(0, UpSprites.Count)],
                 (BeatRow_SO.Beat.Direction.Down) => DownSprites[Random.Range(0, DownSprites.Count)],
-                (BeatRow_SO.Beat.Direction.Right) => UpSprites[Random.Range(0, RightSprites.Count)],
+                (BeatRow_SO.Beat.Direction.Right) => RightSprites[Random.Range(0, RightSprites.Count)],
                 (BeatRow_SO.Beat.Direction.Left) => LeftSprites[Random.Range(0, LeftSprites.Count)],
                 _ => UpSprites[Random.Range(0, UpSprites.Count)],
             };
