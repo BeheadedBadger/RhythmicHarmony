@@ -46,3 +46,342 @@ MonoBehaviour:
   - Min: 0
     Sec: 21
     Dir: 3
+  - Min: 0
+    Sec: 24
+    Dir: 2
+  - Min: 0
+    Sec: 27
+    Dir: 3
+  - Min: 0
+    Sec: 30
+    Dir: 3
+  - Min: 0
+    Sec: 32
+    Dir: 2
+  - Min: 0
+    Sec: 35
+    Dir: 3
+  - Min: 0
+    Sec: 37
+    Dir: 2
+  - Min: 0
+    Sec: 39
+    Dir: 3
+  - Min: 0
+    Sec: 40
+    Dir: 3
+  - Min: 0
+    Sec: 41
+    Dir: 2
+  - Min: 0
+    Sec: 43
+    Dir: 2
+  - Min: 0
+    Sec: 49
+    Dir: 3
+  - Min: 0
+    Sec: 41
+    Dir: 3
+  - Min: 0
+    Sec: 53
+    Dir: 2
+  - Min: 0
+    Sec: 56
+    Dir: 2
+  - Min: 0
+    Sec: 58
+    Dir: 3
+  - Min: 0
+    Sec: 59
+    Dir: 3
+  - Min: 1
+    Sec: 1
+    Dir: 3
+  - Min: 1
+    Sec: 4
+    Dir: 2
+  - Min: 1
+    Sec: 5
+    Dir: 3
+  - Min: 1
+    Sec: 8
+    Dir: 3
+  - Min: 1
+    Sec: 9
+    Dir: 2
+  - Min: 1
+    Sec: 10
+    Dir: 2
+  - Min: 1
+    Sec: 11
+    Dir: 3
+  - Min: 1
+    Sec: 13
+    Dir: 2
+  - Min: 1
+    Sec: 14
+    Dir: 3
+  - Min: 1
+    Sec: 15
+    Dir: 2
+  - Min: 1
+    Sec: 17
+    Dir: 3
+  - Min: 1
+    Sec: 19
+    Dir: 2
+  - Min: 1
+    Sec: 21
+    Dir: 2
+  - Min: 1
+    Sec: 22
+    Dir: 3
+  - Min: 1
+    Sec: 24
+    Dir: 2
+  - Min: 1
+    Sec: 26
+    Dir: 3
+  - Min: 1
+    Sec: 27
+    Dir: 3
+  - Min: 0
+    Sec: 21
+    Dir: 3
+  - Min: 1
+    Sec: 29
+    Dir: 2
+  - Min: 1
+    Sec: 31
+    Dir: 3
+  - Min: 1
+    Sec: 34
+    Dir: 3
+  - Min: 1
+    Sec: 35
+    Dir: 2
+  - Min: 1
+    Sec: 37
+    Dir: 3
+  - Min: 1
+    Sec: 39
+    Dir: 2
+  - Min: 1
+    Sec: 40
+    Dir: 2
+  - Min: 1
+    Sec: 44
+    Dir: 3
+  - Min: 1
+    Sec: 45
+    Dir: 3
+  - Min: 1
+    Sec: 46
+    Dir: 2
+  - Min: 1
+    Sec: 48
+    Dir: 3
+  - Min: 1
+    Sec: 49
+    Dir: 2
+  - Min: 1
+    Sec: 51
+    Dir: 3
+  - Min: 1
+    Sec: 54
+    Dir: 3
+  - Min: 1
+    Sec: 58
+    Dir: 2
+  - Min: 2
+    Sec: 0
+    Dir: 2
+  - Min: 2
+    Sec: 1
+    Dir: 3
+  - Min: 2
+    Sec: 2
+    Dir: 3
+  - Min: 2
+    Sec: 4
+    Dir: 2
+  - Min: 2
+    Sec: 5
+    Dir: 3
+  - Min: 2
+    Sec: 7
+    Dir: 2
+  - Min: 2
+    Sec: 9
+    Dir: 2
+  - Min: 2
+    Sec: 11
+    Dir: 3
+  - Min: 2
+    Sec: 12
+    Dir: 2
+  - Min: 2
+    Sec: 13
+    Dir: 3
+  - Min: 2
+    Sec: 15
+    Dir: 3
+  - Min: 2
+    Sec: 17
+    Dir: 2
+  - Min: 2
+    Sec: 18
+    Dir: 2
+  - Min: 2
+    Sec: 19
+    Dir: 3
+  - Min: 2
+    Sec: 22
+    Dir: 3
+  - Min: 2
+    Sec: 23
+    Dir: 2
+  - Min: 2
+    Sec: 24
+    Dir: 3
+  - Min: 2
+    Sec: 26
+    Dir: 3
+  - Min: 2
+    Sec: 28
+    Dir: 2
+  - Min: 2
+    Sec: 29
+    Dir: 3
+  - Min: 2
+    Sec: 30
+    Dir: 2
+  - Min: 2
+    Sec: 31
+    Dir: 3
+  - Min: 2
+    Sec: 33
+    Dir: 2
+  - Min: 2
+    Sec: 34
+    Dir: 2
+  - Min: 2
+    Sec: 37
+    Dir: 3
+  - Min: 2
+    Sec: 38
+    Dir: 3
+  - Min: 2
+    Sec: 40
+    Dir: 2
+  - Min: 2
+    Sec: 43
+    Dir: 2
+  - Min: 2
+    Sec: 44
+    Dir: 2
+  - Min: 2
+    Sec: 47
+    Dir: 3
+  - Min: 2
+    Sec: 48
+    Dir: 2
+  - Min: 2
+    Sec: 54
+    Dir: 2
+  - Min: 2
+    Sec: 55
+    Dir: 3
+  - Min: 2
+    Sec: 56
+    Dir: 3
+  - Min: 2
+    Sec: 58
+    Dir: 2
+  - Min: 2
+    Sec: 59
+    Dir: 2
+  - Min: 3
+    Sec: 0
+    Dir: 3
+  - Min: 3
+    Sec: 2
+    Dir: 2
+  - Min: 3
+    Sec: 3
+    Dir: 3
+  - Min: 3
+    Sec: 4
+    Dir: 3
+  - Min: 3
+    Sec: 5
+    Dir: 2
+  - Min: 3
+    Sec: 7
+    Dir: 2
+  - Min: 3
+    Sec: 8
+    Dir: 3
+  - Min: 3
+    Sec: 9
+    Dir: 3
+  - Min: 3
+    Sec: 10
+    Dir: 2
+  - Min: 3
+    Sec: 11
+    Dir: 2
+  - Min: 3
+    Sec: 13
+    Dir: 3
+  - Min: 3
+    Sec: 15
+    Dir: 2
+  - Min: 3
+    Sec: 16
+    Dir: 3
+  - Min: 3
+    Sec: 17
+    Dir: 2
+  - Min: 3
+    Sec: 18
+    Dir: 2
+  - Min: 3
+    Sec: 19
+    Dir: 3
+  - Min: 3
+    Sec: 21
+    Dir: 3
+  - Min: 3
+    Sec: 22
+    Dir: 2
+  - Min: 3
+    Sec: 23
+    Dir: 2
+  - Min: 3
+    Sec: 24
+    Dir: 3
+  - Min: 3
+    Sec: 26
+    Dir: 3
+  - Min: 3
+    Sec: 27
+    Dir: 2
+  - Min: 3
+    Sec: 29
+    Dir: 2
+  - Min: 3
+    Sec: 31
+    Dir: 3
+  - Min: 3
+    Sec: 33
+    Dir: 2
+  - Min: 3
+    Sec: 34
+    Dir: 2
+  - Min: 3
+    Sec: 36
+    Dir: 2
+  - Min: 3
+    Sec: 38
+    Dir: 2
